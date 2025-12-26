@@ -27,7 +27,7 @@ export const fetchinterviewExperience = createAsyncThunk(
       params.append("limit", limit);
 
       const res = await fetch(
-        `http://localhost:5000/api/interview-experiences?${params.toString()}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/interview-experiences?${params.toString()}`,
         {
           method: "GET",
           credentials: "include", 

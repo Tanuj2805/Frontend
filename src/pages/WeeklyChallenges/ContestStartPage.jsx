@@ -27,7 +27,7 @@ export default function ContestStartPage() {
       try {
         setLoading(true);
         const res = await fetch(
-          `${import.meta.env.VITE_API_BASE_URL}/api/weekly-challenges/${id}`,
+          `http://localhost:5000/api/weekly-challenges/${id}`,
           { credentials: "include" }
         );
         if (!res.ok) throw new Error("Unable to fetch contest data");

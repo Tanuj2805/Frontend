@@ -27,7 +27,7 @@ export default function ContestStartPage() {
       try {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:5000/api/weekly-challenges/${id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/weekly-challenges/${id}`,
           { credentials: "include" }
         );
         if (!res.ok) throw new Error("Unable to fetch contest data");
@@ -61,7 +61,7 @@ export default function ContestStartPage() {
     const fetchContestleaderboard = async () => {
       try {
         const res = await fetch(
-          `${import.meta.env.VITE_API_BASE_URL}/api/weekly-challenges/${id}/leaderboard?skip=${leaderboardskip}`,
+          `http://localhost:5000/api/weekly-challenges/${id}/leaderboard?skip=${leaderboardskip}`,
           { credentials: "include" }
         );
         if (!res.ok) throw new Error("Unable to fetch contest data");
